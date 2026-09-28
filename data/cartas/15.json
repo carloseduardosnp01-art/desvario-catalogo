@@ -1,0 +1,12 @@
+{
+  "id": 15,
+  "codigo": "DSV-015",
+  "tipoMonstro": null,
+  "atk": null,
+  "def": null,
+  "efeito": "Todos os monstros TEMPO e FOLHA no campo ganham 300 de ATK e DEF.",
+  "historia": null,
+  "regiao": "Bosque das Horas Tortas",
+  "descricaoArte": "Floresta de árvores retorcidas cujos troncos são relógios de pêndulo. Galhos terminam em ponteiros, folhas caem em formato de números. Luz dourada de fim de tarde. Sem personagens.",
+  "creditoArte": "Ilustração gerada por IA."
+}

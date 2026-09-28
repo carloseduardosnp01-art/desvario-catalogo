@@ -1,0 +1,12 @@
+{
+  "id": 3,
+  "codigo": "DSV-003",
+  "tipoMonstro": "Planta",
+  "atk": 1200,
+  "def": 1000,
+  "efeito": null,
+  "historia": "Sabe todos os segredos do jardim e conta todos eles, principalmente os que ainda não aconteceram.",
+  "regiao": "Jardim de Xadrez Vivo",
+  "descricaoArte": "Margarida gigante de rosto expressivo, cochichando com a mão-folha na frente da boca. Flores menores escutam, curiosas. Canteiros em formato de tabuleiro.",
+  "creditoArte": "Ilustração gerada por IA."
+}

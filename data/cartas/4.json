@@ -1,0 +1,12 @@
+{
+  "id": 4,
+  "codigo": "DSV-004",
+  "tipoMonstro": "Fera",
+  "atk": 2500,
+  "def": 2000,
+  "efeito": null,
+  "historia": "Dizem que seu rugido atrasa o dia inteiro em uma hora. Os relojoeiros de Desvario o temem e o adoram.",
+  "regiao": "Bosque das Horas Tortas",
+  "descricaoArte": "Dragão imponente de bronze e engrenagens, com mostrador de relógio no peito e asas formadas por ponteiros. Ampulhetas pendem dos chifres. Céu crepuscular com vários sóis em horários diferentes.",
+  "creditoArte": "Ilustração gerada por IA."
+}

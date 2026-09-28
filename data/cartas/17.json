@@ -1,0 +1,12 @@
+{
+  "id": 17,
+  "codigo": "DSV-017",
+  "tipoMonstro": null,
+  "atk": null,
+  "def": null,
+  "efeito": "O monstro equipado ganha 600 de ATK.",
+  "historia": null,
+  "regiao": "Jardim de Xadrez Vivo",
+  "descricaoArte": "Guarda-chuva aberto e virado para cima, recolhendo estrelas que caem do céu noturno. Cabo de bengala dourada em espiral.",
+  "creditoArte": "Ilustração gerada por IA."
+}

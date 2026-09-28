@@ -1,0 +1,12 @@
+{
+  "id": 21,
+  "codigo": "DSV-021",
+  "tipoMonstro": "Burocrata",
+  "atk": 1200,
+  "def": 2000,
+  "efeito": null,
+  "historia": "Noventa graus. Nem um a mais, nem um a menos. Nenhum sonho passa por ele sem estar no ângulo correto.",
+  "regiao": "Cidadela Cinzenta",
+  "descricaoArte": "Guarda robusto com corpo em forma de esquadro de metal, escudo retangular e pés quadrados cravados no chão, bloqueando um portão cinza.",
+  "creditoArte": "Ilustração gerada por IA."
+}

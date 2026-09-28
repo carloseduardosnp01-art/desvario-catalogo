@@ -1,0 +1,12 @@
+{
+  "id": 27,
+  "codigo": "DSV-027",
+  "tipoMonstro": "Burocrata",
+  "atk": 2600,
+  "def": 1800,
+  "efeito": null,
+  "historia": "Prende o céu ao chão para que nada mais flutue sem autorização.",
+  "regiao": "Cidadela Cinzenta",
+  "descricaoArte": "Grampeador de metal do tamanho de um prédio, boca aberta como mandíbula, grampeando nuvens coloridas ao chão. Soldados-régua pequenos o acompanham.",
+  "creditoArte": "Ilustração gerada por IA."
+}

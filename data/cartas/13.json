@@ -1,0 +1,12 @@
+{
+  "id": 13,
+  "codigo": "DSV-013",
+  "tipoMonstro": "Burocrata",
+  "atk": 3000,
+  "def": 2500,
+  "efeito": "Enquanto esta carta estiver com a face para cima no campo, todos os monstros que o oponente controla perdem 500 de ATK.",
+  "historia": "Um mundo sem absurdo é um mundo sem erros. E um mundo sem erros é perfeito.",
+  "regiao": "Cidadela Cinzenta",
+  "descricaoArte": "Figura altíssima e rígida, sobretudo cinza impecável e cartola retangular, rosto liso sem traços. Esquadro e compasso gigantes nas mãos. Atrás dele, a cidade colorida vira uma planta arquitetônica cinza. Só os olhos brilham, brancos.",
+  "creditoArte": "Ilustração gerada por IA."
+}

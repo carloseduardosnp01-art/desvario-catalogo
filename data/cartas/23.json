@@ -1,0 +1,12 @@
+{
+  "id": 23,
+  "codigo": "DSV-023",
+  "tipoMonstro": "Burocrata",
+  "atk": 1500,
+  "def": 1500,
+  "efeito": "Uma vez por turno: você pode descartar 1 carta para comprar 1 carta.",
+  "historia": "Tudo está arquivado. Achar é que é o problema.",
+  "regiao": "Cidadela Cinzenta",
+  "descricaoArte": "Senhora alta e séria cujo corpo é um arquivo de aço com dezenas de gavetas, algumas abertas e cheias de fichas. Coque apertado com lápis espetados, óculos de meia-lua.",
+  "creditoArte": "Ilustração gerada por IA."
+}

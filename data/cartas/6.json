@@ -1,0 +1,12 @@
+{
+  "id": 6,
+  "codigo": "DSV-006",
+  "tipoMonstro": "Sonhador",
+  "atk": 1600,
+  "def": 1400,
+  "efeito": "Se esta carta destruir um monstro do oponente em batalha, você ganha 500 PL.",
+  "historia": "Caiu numa poça de tinta e acordou do outro lado. Cada passo que dá devolve uma cor ao mundo.",
+  "regiao": "Nosso mundo",
+  "descricaoArte": "Jovem aventureiro de capa longa e surrada, mãos e barra da capa manchadas de tinta roxa e turquesa que escorre e pinta o chão cinza por onde pisa. Segura um pincel como varinha. Fundo metade colorido, metade cinzento.",
+  "creditoArte": "Ilustração gerada por IA."
+}

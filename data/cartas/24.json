@@ -1,0 +1,12 @@
+{
+  "id": 24,
+  "codigo": "DSV-024",
+  "tipoMonstro": "Burocrata",
+  "atk": 1400,
+  "def": 800,
+  "efeito": "Se esta carta destruir um monstro do oponente em batalha: o oponente descarta 1 carta aleatória da mão.",
+  "historia": "Aponta tudo até sobrar só a ponta, e depois nem ela.",
+  "regiao": "Cidadela Cinzenta",
+  "descricaoArte": "Apontador de metal com boca cheia de dentes de lâmina, mastigando um lápis de cor (único ponto colorido). Aparas de lápis voam ao redor.",
+  "creditoArte": "Ilustração gerada por IA."
+}

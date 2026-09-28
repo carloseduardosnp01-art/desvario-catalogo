@@ -1,0 +1,12 @@
+{
+  "id": 9,
+  "codigo": "DSV-009",
+  "tipoMonstro": "Utensílio",
+  "atk": 300,
+  "def": 300,
+  "efeito": "Se esta carta for destruída em batalha e enviada ao Cemitério: compre 1 carta.",
+  "historia": "Pula de pires em pires. Quando cai, sempre derrama algo útil.",
+  "regiao": "Mar de Chá Morno",
+  "descricaoArte": "Xícara pequena e alegre com perninhas finas, pulando entre pires flutuantes. Gotas de chá dourado formam uma trilha. Fundo creme com papel de parede antigo.",
+  "creditoArte": "Ilustração gerada por IA."
+}

@@ -1,0 +1,12 @@
+{
+  "id": 8,
+  "codigo": "DSV-008",
+  "tipoMonstro": "Fera",
+  "atk": 1400,
+  "def": 1800,
+  "efeito": "Uma vez por turno: escolha 1 monstro com a face para cima no campo; até o fim deste turno, troque o ATK e a DEF originais dele.",
+  "historia": ".oãhc o êv amic arp ahlo meuQ (Quem olha pra cima vê o chão.)",
+  "regiao": "Biblioteca de Portas",
+  "descricaoArte": "Coruja pendurada de cabeça para baixo num galho, mas seu reflexo no lago abaixo está em pé, olhando para o espectador. Olhos enormes como espelhos. Penas prateadas e azuladas com estrelas refletidas.",
+  "creditoArte": "Ilustração gerada por IA."
+}

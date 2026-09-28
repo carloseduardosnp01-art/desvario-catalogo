@@ -1,0 +1,12 @@
+{
+  "id": 20,
+  "codigo": "DSV-020",
+  "tipoMonstro": null,
+  "atk": null,
+  "def": null,
+  "efeito": "Pague 1000 PL: anule a ativação de uma carta de Magia e destrua-a.",
+  "historia": null,
+  "regiao": "Cidadela Cinzenta",
+  "descricaoArte": "Carimbo gigante descendo sobre uma carta mágica brilhante, deixando a marca 'INDEFERIDO' em vermelho, a única cor da cena. O resto é cinza.",
+  "creditoArte": "Ilustração gerada por IA."
+}

@@ -1,0 +1,12 @@
+{
+  "id": 32,
+  "codigo": "DSV-032",
+  "tipoMonstro": null,
+  "atk": null,
+  "def": null,
+  "efeito": "Os monstros invocados pelo oponente não podem declarar ataque no turno em que foram invocados.",
+  "historia": null,
+  "regiao": "Cidadela Cinzenta",
+  "descricaoArte": "Fila de criaturas coloridas de Desvario, entediadas, esperando diante de um guichê fechado com a placa 'VOLTE AMANHÃ'. Relógio de parede parado.",
+  "creditoArte": "Ilustração gerada por IA."
+}

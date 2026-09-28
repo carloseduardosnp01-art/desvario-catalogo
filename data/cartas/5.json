@@ -1,0 +1,12 @@
+{
+  "id": 5,
+  "codigo": "DSV-005",
+  "tipoMonstro": "Burocrata",
+  "atk": 1800,
+  "def": 1000,
+  "efeito": null,
+  "historia": "Mede tudo, aprova nada. Onde passa, as curvas viram linhas retas.",
+  "regiao": "Cidadela Cinzenta",
+  "descricaoArte": "Soldado alto e magro com o corpo feito de régua de madeira graduada. Olhos são furos de fichário, lança é um lápis apontado. Tudo em cinza; atrás dele, uma paisagem colorida sendo 'endireitada'.",
+  "creditoArte": "Ilustração gerada por IA."
+}

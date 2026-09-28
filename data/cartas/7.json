@@ -1,0 +1,12 @@
+{
+  "id": 7,
+  "codigo": "DSV-007",
+  "tipoMonstro": "Utensílio",
+  "atk": 1000,
+  "def": 1600,
+  "efeito": "Quando esta carta for Invocada por Invocação-Normal: olhe as 3 cartas do topo do seu Deck e coloque-as de volta na ordem que quiser.",
+  "historia": "O chá sabe antes de você. Ela só traduz.",
+  "regiao": "Mar de Chá Morno",
+  "descricaoArte": "Chaleira de porcelana antiga com rosto de senhora mística, xale estampado e brincos de colher. O vapor do bico forma cartas e símbolos no ar. Mesa com toalha de renda e bola de cristal de açúcar.",
+  "creditoArte": "Ilustração gerada por IA."
+}

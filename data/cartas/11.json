@@ -1,0 +1,12 @@
+{
+  "id": 11,
+  "codigo": "DSV-011",
+  "tipoMonstro": "Sonhador",
+  "atk": 2300,
+  "def": 1800,
+  "efeito": "Quando esta carta for Invocada por Invocação-Tributo: escolha 1 Magia ou Armadilha no campo e destrua-a.",
+  "historia": "Tece caminhos que só existem enquanto ninguém olha para eles.",
+  "regiao": "Biblioteca de Portas",
+  "descricaoArte": "Figura esguia e elegante de vários braços finos, tecendo fios prateados que viram pontes e escadas no ar. Rosto parcialmente oculto por um véu espelhado. Fundo noturno azul-escuro com constelações costuradas.",
+  "creditoArte": "Ilustração gerada por IA."
+}

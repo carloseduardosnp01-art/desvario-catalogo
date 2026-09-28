@@ -1,0 +1,12 @@
+{
+  "id": 1,
+  "codigo": "DSV-001",
+  "tipoMonstro": "Fera",
+  "atk": 700,
+  "def": 1200,
+  "efeito": null,
+  "historia": "Carrega nas costas um relógio que nunca acertou a hora. Ainda assim, chega sempre no momento exato em que ninguém o esperava.",
+  "regiao": "Bosque das Horas Tortas",
+  "descricaoArte": "Caracol gordinho e simpático, de monóculo e cachecol, que carrega um relógio de bolso de latão enorme no lugar da concha. Os ponteiros andam ao contrário. Trilha de musgo com números romanos caídos pelo chão.",
+  "creditoArte": "Ilustração gerada por IA."
+}

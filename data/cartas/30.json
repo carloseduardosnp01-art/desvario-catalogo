@@ -1,0 +1,12 @@
+{
+  "id": 30,
+  "codigo": "DSV-030",
+  "tipoMonstro": null,
+  "atk": null,
+  "def": null,
+  "efeito": "Só pode ser equipada em um monstro CINZA. O monstro equipado ganha 700 de ATK.",
+  "historia": null,
+  "regiao": "Cidadela Cinzenta",
+  "descricaoArte": "Linha reta perfeita em grafite cortando a imagem de ponta a ponta, 'endireitando' um rio sinuoso, uma árvore torta e um arco-íris no caminho.",
+  "creditoArte": "Ilustração gerada por IA."
+}

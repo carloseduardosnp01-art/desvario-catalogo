@@ -1,0 +1,12 @@
+{
+  "id": 16,
+  "codigo": "DSV-016",
+  "tipoMonstro": null,
+  "atk": null,
+  "def": null,
+  "efeito": "Cause 800 de dano ao oponente.",
+  "historia": null,
+  "regiao": "Mar de Chá Morno",
+  "descricaoArte": "Bule inclinado derramando um jato de chá fervente em espiral, muito vapor. Soldados-régua cinzentos fogem ao fundo.",
+  "creditoArte": "Ilustração gerada por IA."
+}

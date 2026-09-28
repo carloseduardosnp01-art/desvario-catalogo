@@ -1,0 +1,12 @@
+{
+  "id": 19,
+  "codigo": "DSV-019",
+  "tipoMonstro": null,
+  "atk": null,
+  "def": null,
+  "efeito": "Quando um monstro do oponente declarar um ataque: destrua o monstro atacante.",
+  "historia": null,
+  "regiao": "Biblioteca de Portas",
+  "descricaoArte": "Espelho alto de moldura rococó; o reflexo mostra o atacante de cabeça para baixo se desfazendo em cacos. Rachaduras finas brilhando em azul-prateado.",
+  "creditoArte": "Ilustração gerada por IA."
+}

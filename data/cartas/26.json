@@ -1,0 +1,12 @@
+{
+  "id": 26,
+  "codigo": "DSV-026",
+  "tipoMonstro": "Burocrata",
+  "atk": 2100,
+  "def": 1600,
+  "efeito": "Quando esta carta for Invocada por Invocação-Tributo: destrua 1 monstro com a face para cima que o oponente controla e que tenha 1500 ou menos de ATK.",
+  "historia": "Onde ela passa, nem o rascunho sobrevive.",
+  "regiao": "Cidadela Cinzenta",
+  "descricaoArte": "Criatura massiva de borracha escolar, metade branca metade cinza, rolando sobre uma paisagem colorida e deixando um rastro branco e vazio, com farelos de borracha.",
+  "creditoArte": "Ilustração gerada por IA."
+}

@@ -1,0 +1,774 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Desvario: O Reino do Avesso. Catálogo interativo das cartas de um jogo de duelo inspirado em Yu-Gi-Oh! e no mundo do absurdo.">
+  <title>Desvario: O Reino do Avesso · Catálogo de Cartas</title>
+
+  <link rel="icon" href="img/favicon-32.png" type="image/png" sizes="32x32">
+  <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+
+  <!-- Começam a baixar antes de tudo: o logo (maior elemento da primeira tela) e as duas fontes principais -->
+  <link rel="preload" as="image" href="img/logo-desvario.webp" fetchpriority="high">
+  <link rel="preload" as="font" type="font/woff2" href="fontes/crimson-pro.woff2" crossorigin>
+  <link rel="preload" as="font" type="font/woff2" href="fontes/cinzel.woff2" crossorigin>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+
+  <!-- Bootstrap 5.3.3 (CSS) pela CDN jsDelivr -->
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+        crossorigin="anonymous">
+
+  <!-- Estilos próprios (inclui as fontes Cinzel e Crimson Pro) -->
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- Scripts com defer: baixados em paralelo e executados depois que o HTML é montado -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+          integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+          crossorigin="anonymous" defer></script>
+  <script src="js/app.js" defer></script>
+</head>
+<body>
+  <a class="visually-hidden-focusable pular-link" href="#conteudo">Pular para o conteúdo</a>
+
+  <!-- ===================== CABEÇALHO E NAVEGAÇÃO ===================== -->
+  <header class="sticky-top">
+    <nav class="navbar navbar-expand-lg navbar-dark navbar-desvario" aria-label="Navegação principal">
+      <div class="container">
+        <a class="navbar-brand" href="#inicio">
+          <img class="logo-navbar" src="img/logo-desvario.webp" alt="Desvario: início" width="720" height="214" fetchpriority="high">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu-principal"
+                aria-controls="menu-principal" aria-expanded="false" aria-label="Abrir menu de navegação">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="menu-principal">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item"><a class="nav-link" href="#inicio">Início</a></li>
+            <li class="nav-item"><a class="nav-link" href="#historia">História</a></li>
+            <li class="nav-item"><a class="nav-link" href="#catalogo">Catálogo</a></li>
+            <li class="nav-item"><a class="nav-link" href="#regras">Regras</a></li>
+            <li class="nav-item"><a class="nav-link" href="#decks">Decks</a></li>
+            <li class="nav-item"><a class="nav-link" href="#sobre">Sobre o projeto</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main id="conteudo">
+
+    <!-- ===================== 1. APRESENTAÇÃO ===================== -->
+    <section id="inicio" class="secao-hero" aria-labelledby="titulo-inicio">
+      <div class="container">
+        <div class="row align-items-center g-4">
+          <div class="col-12 col-lg-7">
+            <p class="sobretitulo">Um jogo de cartas do outro lado da tinta</p>
+            <h1 id="titulo-inicio" class="titulo-principal">
+              <img class="logo-hero" src="img/logo-desvario.webp" alt="Desvario" width="720" height="214" fetchpriority="high">
+              <span>O Reino do Avesso</span>
+            </h1>
+            <p class="lead">
+              Em Desvario, rios de chá correm morro acima, relógios andam para trás e portas surgem onde bem entendem.
+              É o absurdo que mantém o reino vivo e colorido. Agora a <strong>Ordem Cinzenta</strong> quer
+              “corrigir” tudo isso, e só as <strong>Cartas de Devaneio</strong> podem impedir.
+            </p>
+            <div class="d-flex flex-wrap gap-2">
+              <a class="btn btn-desvario btn-lg botao-com-icone" href="#catalogo">
+                <svg class="icone-botao" viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
+                  <rect x="3" y="5" width="11" height="15" rx="2" transform="rotate(-10 8.5 12.5)"/>
+                  <rect x="9" y="4" width="11" height="15" rx="2"/>
+                  <path d="M14.5 9.5l1 2 2 .3-1.5 1.4.4 2-1.9-1-1.9 1 .4-2-1.5-1.4 2-.3z"/>
+                </svg>
+                Explorar as cartas
+              </a>
+              <a class="btn btn-outline-light btn-lg botao-com-icone" href="#historia">
+                <svg class="icone-botao" viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
+                  <path d="M3 5.5c3-1.5 6-1.5 9 .5v13c-3-2-6-2-9-.5z"/>
+                  <path d="M21 5.5c-3-1.5-6-1.5-9 .5v13c3-2 6-2 9-.5z"/>
+                </svg>
+                Conhecer a história
+              </a>
+            </div>
+          </div>
+          <div class="col-12 col-lg-5">
+            <!-- Leque com três cartas reais do jogo; cada uma abre o modal de detalhes -->
+            <div class="leque" role="group" aria-label="Cartas em destaque">
+              <button type="button" class="card carta leque__carta leque__carta--esquerda" data-moldura="efeito"
+                      data-carta-id="13" data-bs-toggle="modal" data-bs-target="#modal-carta">
+                <span class="visually-hidden">Ver detalhes da carta </span>
+                <span class="carta__topo"><span class="carta__nome">O Arquiteto Cinzento</span></span>
+                <span class="carta__nivel"><span class="estrelas" aria-hidden="true">★★★★★★★★</span><span class="visually-hidden">Nível 8</span></span>
+                <img class="carta__arte" src="img/cartas/dsv-013-arquiteto-cinzento.webp" alt="" width="640" height="640" loading="lazy">
+                <span class="carta__caixa-texto"><span class="carta__tipo">[Burocrata / Efeito]</span></span>
+              </button>
+              <button type="button" class="card carta leque__carta leque__carta--direita" data-moldura="magia"
+                      data-carta-id="14" data-bs-toggle="modal" data-bs-target="#modal-carta">
+                <span class="visually-hidden">Ver detalhes da carta </span>
+                <span class="carta__topo"><span class="carta__nome">Poça de Tinta</span></span>
+                <span class="carta__nivel"><span class="subtipo-magia">[Magia Normal]</span></span>
+                <img class="carta__arte" src="img/cartas/dsv-014-poca-de-tinta.webp" alt="" width="640" height="640" loading="lazy">
+                <span class="carta__caixa-texto"><span class="carta__tipo">[Carta de Magia]</span></span>
+              </button>
+              <button type="button" class="card carta leque__carta leque__carta--centro" data-moldura="efeito"
+                      data-carta-id="6" data-bs-toggle="modal" data-bs-target="#modal-carta">
+                <span class="visually-hidden">Ver detalhes da carta </span>
+                <span class="carta__topo"><span class="carta__nome">O Sonhador de Tinta</span></span>
+                <span class="carta__nivel"><span class="estrelas" aria-hidden="true">★★★★</span><span class="visually-hidden">Nível 4</span></span>
+                <img class="carta__arte" src="img/cartas/dsv-006-sonhador-de-tinta.webp" alt="" width="640" height="640" loading="lazy">
+                <span class="carta__caixa-texto"><span class="carta__tipo">[Sonhador / Efeito]</span></span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== HISTÓRIA (capítulos) ===================== -->
+    <section id="historia" class="secao secao-historia" aria-labelledby="titulo-historia">
+      <div class="container">
+        <h2 id="titulo-historia" class="titulo-secao">A história de Desvario</h2>
+        <p class="intro-historia">
+          Toda carta do jogo é alguém desta história. Conheça o reino, a ameaça que o está apagando
+          e a jornada de quem caiu do nosso mundo para salvá-lo.
+        </p>
+
+        <div class="capitulos">
+          <section class="row g-4 align-items-center capitulo">
+            <div class="col-12 col-md-5">
+              <img class="capitulo__imagem" src="img/cartas/dsv-015-bosque-das-horas-tortas.webp" width="640" height="640" loading="lazy"
+                   alt="Floresta de árvores retorcidas com relógios de pêndulo nos troncos e folhas em forma de números caindo sob a luz dourada.">
+            </div>
+            <div class="col-12 col-md-7">
+              <p class="capitulo__numero">Capítulo I</p>
+              <h3 class="capitulo__titulo">O reino do avesso</h3>
+              <p>
+                Do outro lado da tinta existe <strong>Desvario</strong>, um reino onde nada faz sentido, e é justamente isso
+                que o mantém vivo. Lá, rios de chá correm morro acima, relógios crescem em árvores e contam as horas para
+                trás, flores fofocam sobre o que ainda vai acontecer e portas aparecem onde bem entendem.
+              </p>
+              <p>
+                Cada absurdo produz um pouco de <em>Devaneio</em>, a força colorida que sustenta o reino.
+                Quanto mais estranho um lugar, mais vivo ele é.
+              </p>
+            </div>
+          </section>
+
+          <section class="row g-4 align-items-center capitulo capitulo--invertido">
+            <div class="col-12 col-md-5">
+              <img class="capitulo__imagem" src="img/cartas/dsv-023-secretaria-de-mil-gavetas.webp" width="640" height="640" loading="lazy"
+                   alt="Uma senhora séria cujo corpo é um arquivo de aço com dezenas de gavetas abertas e cheias de fichas, num salão cinzento repleto de arquivos e papéis.">
+            </div>
+            <div class="col-12 col-md-7">
+              <p class="capitulo__numero">Capítulo II</p>
+              <h3 class="capitulo__titulo">A Ordem Cinzenta</h3>
+              <p>
+                Nas margens de um caderno esquecido nasceu o <strong>Arquiteto Cinzento</strong>, uma figura sem rosto que
+                acredita que um mundo sem erros é um mundo perfeito. Ele reuniu a <strong>Ordem Cinzenta</strong>: réguas,
+                esquadros, carimbos, borrachas e grampeadores que ganharam vida.
+              </p>
+              <p>
+                A Ordem não destrói ninguém. Ela <em>arquiva</em>. Cada habitante capturado é prensado, recortado em um
+                retângulo perfeito e carimbado como uma ficha cadastral: nome, função, <em>INDEFERIDO</em>. As curvas viram
+                linhas retas, as cores se apagam e regiões inteiras acabam guardadas em gavetas de metal. Desvario está
+                virando um grande fichário, cinzento e silencioso.
+              </p>
+            </div>
+          </section>
+
+          <section class="row g-4 align-items-center capitulo">
+            <div class="col-12 col-md-5">
+              <img class="capitulo__imagem" src="img/cartas/dsv-006-sonhador-de-tinta.webp" width="640" height="640" loading="lazy"
+                   alt="Um jovem de capa surrada e mãos manchadas de tinta roxa e turquesa ergue um pincel; de um lado o mundo é colorido, do outro é cinzento.">
+            </div>
+            <div class="col-12 col-md-7">
+              <p class="capitulo__numero">Capítulo III</p>
+              <h3 class="capitulo__titulo">O Sonhador de Tinta</h3>
+              <p>
+                Numa tarde chuvosa do nosso mundo, um jovem pisou numa poça que não era de água. Era tinta: roxa, turquesa
+                e impossivelmente funda. Do outro lado, ele acordou em Desvario com as mãos manchadas e uma capa que pinga cor.
+              </p>
+              <p>
+                Quando ele tocou uma das fichas abandonadas pela Ordem, a tinta escorreu pelo papel e o habitante preso ali
+                dentro piscou, riu e se mexeu. Nenhum outro ser do reino consegue fazer isso. Os habitantes passaram a
+                chamá-lo de <strong>Sonhador de Tinta</strong>.
+              </p>
+            </div>
+          </section>
+
+          <section class="row g-4 align-items-center capitulo capitulo--invertido">
+            <div class="col-12 col-md-5">
+              <img class="capitulo__imagem" src="img/cartas/dsv-007-madame-bule.webp" width="640" height="640" loading="lazy"
+                   alt="Uma chaleira de porcelana com rosto de vidente, xale e brincos de colher; o vapor do bico forma cartas brilhantes no ar.">
+            </div>
+            <div class="col-12 col-md-7">
+              <p class="capitulo__numero">Capítulo IV</p>
+              <h3 class="capitulo__titulo">O Regulamento</h3>
+              <p>
+                Mas reanimar uma ficha dura pouco. Enquanto a Ordem mantiver a posse de uma região, tudo o que existe nela
+                volta a secar. O Sonhador precisava de um jeito de tomar o reino de volta, e espadas não servem contra quem
+                não sente dor e não conhece medo.
+              </p>
+              <p>
+                Foi <strong>Madame Bule</strong>, a chaleira vidente do Mar de Chá Morno, quem encontrou a brecha nas folhas
+                de chá. A Ordem obedece cegamente ao próprio <strong>Regulamento</strong>, e o Artigo 1º diz que toda decisão
+                pode ser contestada por meio de um <strong>Recurso Formal</strong>, julgado em disputa com regras escritas e
+                testemunhas. O Arquiteto não pode ignorar um Recurso sem violar a si mesmo.
+              </p>
+              <p>
+                Assim nasceram os duelos. Cada habitante que confia no Sonhador empresta a ele sua própria ficha, revivida com
+                tinta: são as <strong>Cartas de Devaneio</strong>, monstros, magias e armadilhas feitos de pura imaginação.
+                A Ordem responde com suas fichas carimbadas, soldados rígidos que seguem regras em três vias. Quem vence o
+                Recurso fica com a região.
+              </p>
+            </div>
+          </section>
+
+          <section class="row g-4 align-items-center capitulo">
+            <div class="col-12 col-md-5">
+              <img class="capitulo__imagem" src="img/cartas/dsv-013-arquiteto-cinzento.webp" width="640" height="640" loading="lazy"
+                   alt="Uma figura altíssima de sobretudo e cartola cinzentos, sem rosto e com olhos brancos brilhando, segura um esquadro e um compasso gigantes.">
+            </div>
+            <div class="col-12 col-md-7">
+              <p class="capitulo__numero">Capítulo V</p>
+              <h3 class="capitulo__titulo">O último Recurso</h3>
+              <p>
+                A jornada atravessa o Bosque das Horas Tortas, o Mar de Chá Morno, a Biblioteca de Portas e o Jardim de
+                Xadrez Vivo. Cada duelo vencido revoga um indeferimento: as cores voltam, as gavetas se abrem e os habitantes
+                libertados se juntam ao baralho do Sonhador.
+              </p>
+              <p>
+                No fim do caminho, na torre mais alta da <strong>Cidadela Cinzenta</strong>, o Arquiteto espera com seu
+                esquadro e seu compasso, guardando a ficha mais importante de todas: a de Desvario inteiro. Se ele vencer, o
+                reino será arquivado para sempre. Se o Sonhador vencer… ninguém sabe ao certo o que acontece, e é exatamente
+                assim que Desvario gosta.
+              </p>
+            </div>
+          </section>
+        </div>
+
+        <h3 class="titulo-regioes">As regiões de Desvario</h3>
+        <p>Escolha uma região para conhecer sua história e as cartas referentes a ela.</p>
+        <ul class="nav nav-pills seletor-regioes" id="abas-regioes" role="tablist">
+          <li class="nav-item" role="presentation">
+            <button class="nav-link active" id="aba-regiao-bosque" data-bs-toggle="pill"
+                    data-bs-target="#regiao-bosque" type="button" role="tab" aria-controls="regiao-bosque"
+                    aria-selected="true" data-atributo="tempo">
+              <img src="img/regioes/miniatura-bosque-das-horas-tortas.webp" alt="" width="360" height="240" loading="lazy">
+              <span>Bosque das Horas Tortas</span>
+            </button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link" id="aba-regiao-mar" data-bs-toggle="pill"
+                    data-bs-target="#regiao-mar" type="button" role="tab" aria-controls="regiao-mar"
+                    aria-selected="false" data-atributo="cha">
+              <img src="img/regioes/miniatura-mar-de-cha-morno.webp" alt="" width="360" height="240" loading="lazy">
+              <span>Mar de Chá Morno</span>
+            </button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link" id="aba-regiao-biblioteca" data-bs-toggle="pill"
+                    data-bs-target="#regiao-biblioteca" type="button" role="tab" aria-controls="regiao-biblioteca"
+                    aria-selected="false" data-atributo="espelho">
+              <img src="img/regioes/miniatura-biblioteca-de-portas.webp" alt="" width="360" height="240" loading="lazy">
+              <span>Biblioteca de Portas</span>
+            </button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link" id="aba-regiao-jardim" data-bs-toggle="pill"
+                    data-bs-target="#regiao-jardim" type="button" role="tab" aria-controls="regiao-jardim"
+                    aria-selected="false" data-atributo="folha">
+              <img src="img/regioes/miniatura-jardim-de-xadrez-vivo.webp" alt="" width="360" height="240" loading="lazy">
+              <span>Jardim de Xadrez Vivo</span>
+            </button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link" id="aba-regiao-cidadela" data-bs-toggle="pill"
+                    data-bs-target="#regiao-cidadela" type="button" role="tab" aria-controls="regiao-cidadela"
+                    aria-selected="false" data-atributo="cinza">
+              <img src="img/regioes/miniatura-cidadela-cinzenta.webp" alt="" width="360" height="240" loading="lazy">
+              <span>Cidadela Cinzenta</span>
+            </button>
+          </li>
+        </ul>
+        <div class="tab-content">
+          <div class="tab-pane fade show active" id="regiao-bosque" role="tabpanel" aria-labelledby="aba-regiao-bosque" tabindex="0">
+            <article class="regiao" data-atributo="tempo">
+              <div class="row g-4">
+                <div class="col-12 col-lg-7">
+                  <img class="regiao__imagem" src="img/regioes/regiao-bosque-das-horas-tortas.webp" width="960" height="640" loading="lazy"
+                       alt="Vista panorâmica de uma floresta de árvores-relógio sob três sóis; no centro, uma árvore gigantesca coberta de relógios e ampulhetas, e no primeiro plano folhas com números caídas numa trilha de musgo.">
+                </div>
+                <div class="col-12 col-lg-5">
+                  <p class="regiao__atributo">
+                    <span class="icone-atributo" data-atributo="tempo" aria-hidden="true"></span>
+                    Atributo predominante: TEMPO
+                  </p>
+                  <h4 class="regiao__nome">Bosque das Horas Tortas</h4>
+                  <p>No Bosque das Horas Tortas cada árvore marca uma hora diferente, e todas estão certas. O amanhecer, o meio-dia e o pôr do sol dividem o mesmo céu, e as folhas caem em forma de números, contando para trás.</p>
+                  <p>No centro ergue-se a Grande Árvore-Relógio, cujo tique-taque mantém o tempo de Desvario torto do jeito certo. Dizem que quem cochila sob seus galhos acorda no dia anterior, e que ninguém chega atrasado por suas trilhas, apenas em outro horário.</p>
+                  <p class="regiao__ameaca"><strong>Ameaça:</strong> a Ordem Cinzenta quer acertar todos os relógios numa única Hora Oficial. Se conseguir, o bosque para para sempre.</p>
+                </div>
+                <!-- Cartas da região: montadas pelo JavaScript a partir de data/cartas.json (campo "regiao") -->
+                <div class="col-12 area-cartas-regiao" data-regiao="Bosque das Horas Tortas" hidden></div>
+              </div>
+            </article>
+          </div>
+          <div class="tab-pane fade" id="regiao-mar" role="tabpanel" aria-labelledby="aba-regiao-mar" tabindex="0">
+            <article class="regiao" data-atributo="cha">
+              <div class="row g-4">
+                <div class="col-12 col-lg-7">
+                  <img class="regiao__imagem" src="img/regioes/regiao-mar-de-cha-morno.webp" width="960" height="640" loading="lazy"
+                       alt="Um mar de chá dourado com barcos que são xícaras de porcelana com velas de renda, ilhas em forma de pires com cidades de porcelana, falésias de cubos de açúcar e um farol em forma de bule.">
+                </div>
+                <div class="col-12 col-lg-5">
+                  <p class="regiao__atributo">
+                    <span class="icone-atributo" data-atributo="cha" aria-hidden="true"></span>
+                    Atributo predominante: CHÁ
+                  </p>
+                  <h4 class="regiao__nome">Mar de Chá Morno</h4>
+                  <p>O Mar de Chá Morno está sempre na temperatura exata do conforto. Barcos-xícara navegam com velas de renda entre ilhas de pires, onde cidades inteiras de porcelana azul e branca se equilibram, e as falésias de cubos de açúcar derretem em cachoeiras douradas.</p>
+                  <p>À noite, o farol-bule guia os navegantes com a luz que sai do seu bico. Nas margens, quem sabe ler as folhas que ficam no fundo das xícaras descobre o futuro antes de ele acontecer.</p>
+                  <p class="regiao__ameaca"><strong>Ameaça:</strong> a Ordem Cinzenta quer engarrafar o mar, rotular cada onda e servir o chá frio, em horário fixo.</p>
+                </div>
+                <!-- Cartas da região: montadas pelo JavaScript a partir de data/cartas.json (campo "regiao") -->
+                <div class="col-12 area-cartas-regiao" data-regiao="Mar de Chá Morno" hidden></div>
+              </div>
+            </article>
+          </div>
+          <div class="tab-pane fade" id="regiao-biblioteca" role="tabpanel" aria-labelledby="aba-regiao-biblioteca" tabindex="0">
+            <article class="regiao" data-atributo="espelho">
+              <div class="row g-4">
+                <div class="col-12 col-lg-7">
+                  <img class="regiao__imagem" src="img/regioes/regiao-biblioteca-de-portas.webp" width="960" height="640" loading="lazy"
+                       alt="O interior de uma biblioteca infinita sob um céu de constelações, com estantes que são portas iluminadas, escadas em espiral, espelhos de moldura dourada e livros voando como pássaros.">
+                </div>
+                <div class="col-12 col-lg-5">
+                  <p class="regiao__atributo">
+                    <span class="icone-atributo" data-atributo="espelho" aria-hidden="true"></span>
+                    Atributo predominante: ESPELHO
+                  </p>
+                  <h4 class="regiao__nome">Biblioteca de Portas</h4>
+                  <p>A Biblioteca de Portas não tem paredes do lado de fora: suas estantes sobem até um céu de constelações. Cada prateleira é também uma porta, que leva a outro canto de Desvario ou a lugar nenhum, e os livros voam como pássaros entre escadas que nunca terminam onde deveriam.</p>
+                  <p>Os espelhos daqui mostram o avesso das coisas, e as portas surgem e somem quando bem entendem. Quem entra sem rumo pode sair do outro lado do reino, ou de dentro de um livro.</p>
+                  <p class="regiao__ameaca"><strong>Ameaça:</strong> a Ordem Cinzenta quer catalogar todas as portas, trancá-las e carimbar cada uma como ARQUIVADO.</p>
+                </div>
+                <!-- Cartas da região: montadas pelo JavaScript a partir de data/cartas.json (campo "regiao") -->
+                <div class="col-12 area-cartas-regiao" data-regiao="Biblioteca de Portas" hidden></div>
+              </div>
+            </article>
+          </div>
+          <div class="tab-pane fade" id="regiao-jardim" role="tabpanel" aria-labelledby="aba-regiao-jardim" tabindex="0">
+            <article class="regiao" data-atributo="folha">
+              <div class="row g-4">
+                <div class="col-12 col-lg-7">
+                  <img class="regiao__imagem" src="img/regioes/regiao-jardim-de-xadrez-vivo.webp" width="960" height="640" loading="lazy"
+                       alt="Um jardim ensolarado cujo gramado é um tabuleiro de xadrez, com peças de arbusto que andam, flores com rostinhos, caminhos enfeitados com botões e carretéis de linha e um castelo-torre ao fundo.">
+                </div>
+                <div class="col-12 col-lg-5">
+                  <p class="regiao__atributo">
+                    <span class="icone-atributo" data-atributo="folha" aria-hidden="true"></span>
+                    Atributo predominante: FOLHA
+                  </p>
+                  <h4 class="regiao__nome">Jardim de Xadrez Vivo</h4>
+                  <p>No Jardim de Xadrez Vivo o gramado é um tabuleiro, e as peças de arbusto jogam uma partida eterna em que as regras mudam a cada lance. As flores têm rosto, opinião e muita fofoca, e contam os segredos antes mesmo de eles acontecerem.</p>
+                  <p>Os caminhos são enfeitados com botões e carretéis de linha, sobras dos brinquedos que ganharam vida por aqui. Nenhuma peça anda em linha reta e ninguém sabe quem está ganhando, o que deixa todo mundo feliz.</p>
+                  <p class="regiao__ameaca"><strong>Ameaça:</strong> a Ordem Cinzenta quer impor o Regulamento Oficial do Xadrez, em que cada peça só anda em linha reta.</p>
+                </div>
+                <!-- Cartas da região: montadas pelo JavaScript a partir de data/cartas.json (campo "regiao") -->
+                <div class="col-12 area-cartas-regiao" data-regiao="Jardim de Xadrez Vivo" hidden></div>
+              </div>
+            </article>
+          </div>
+          <div class="tab-pane fade" id="regiao-cidadela" role="tabpanel" aria-labelledby="aba-regiao-cidadela" tabindex="0">
+            <article class="regiao" data-atributo="cinza">
+              <div class="row g-4">
+                <div class="col-12 col-lg-7">
+                  <img class="regiao__imagem" src="img/regioes/regiao-cidadela-cinzenta.webp" width="960" height="640" loading="lazy"
+                       alt="Uma linha reta divide a imagem: à esquerda, um pedaço colorido de Desvario com flores e um riacho; à direita, tudo é cinza, com muralhas retas, prédios em forma de arquivos de aço e uma torre-régua ao centro.">
+                </div>
+                <div class="col-12 col-lg-5">
+                  <p class="regiao__atributo">
+                    <span class="icone-atributo" data-atributo="cinza" aria-hidden="true"></span>
+                    Atributo predominante: CINZA
+                  </p>
+                  <h4 class="regiao__nome">Cidadela Cinzenta</h4>
+                  <p>A Cidadela Cinzenta é a capital da Ordem. Suas muralhas são perfeitamente retas, seus prédios são arquivos de aço do tamanho de montanhas e suas ruas formam uma grade sem nenhuma curva. Ao redor dela, a terra já perdeu as cores e as árvores secaram de tédio.</p>
+                  <p>No centro fica a Torre-Régua, de onde a Ordem mede o mundo e decide o que deve ser corrigido. É ali que a jornada termina: quem quiser salvar Desvario precisa atravessar a muralha e vencer o último duelo.</p>
+                </div>
+                <!-- Cartas da região: montadas pelo JavaScript a partir de data/cartas.json (campo "regiao") -->
+                <div class="col-12 area-cartas-regiao" data-regiao="Cidadela Cinzenta" hidden></div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== 2. CATÁLOGO (AJAX) ===================== -->
+    <section id="catalogo" class="secao secao-catalogo" aria-labelledby="titulo-catalogo">
+      <div class="container">
+        <h2 id="titulo-catalogo" class="titulo-secao">Catálogo de cartas</h2>
+        <p>Pesquise pelo nome ou pelo texto da carta, filtre por categoria, atributo ou deck e abra uma carta para ver todos os detalhes.</p>
+
+        <form id="form-filtros" class="row g-3 align-items-end painel-filtros" role="search" aria-label="Buscar e filtrar cartas" novalidate>
+          <div class="col-12 col-lg-6">
+            <label for="filtro-busca" class="form-label">Buscar carta</label>
+            <input type="search" id="filtro-busca" name="busca" class="form-control"
+                   placeholder="Ex.: dragão, chá, DSV-013" autocomplete="off">
+          </div>
+          <div class="col-12 col-sm-6 col-lg-3">
+            <label for="filtro-ordem" class="form-label">Ordenar por</label>
+            <select id="filtro-ordem" name="ordem" class="form-select">
+              <option value="codigo">Código</option>
+              <option value="nivel-desc">Maior Nível</option>
+              <option value="nivel-asc">Menor Nível</option>
+            </select>
+          </div>
+          <div class="col-12 col-sm-6 col-lg-3">
+            <button type="button" id="botao-limpar" class="btn btn-outline-secondary w-100">Limpar filtros</button>
+          </div>
+          <div class="col-12 col-sm-4">
+            <label for="filtro-categoria" class="form-label">Categoria</label>
+            <select id="filtro-categoria" name="categoria" class="form-select">
+              <option value="">Todas</option>
+              <option value="Monstro Normal">Monstro Normal</option>
+              <option value="Monstro de Efeito">Monstro de Efeito</option>
+              <option value="Magia">Magia</option>
+              <option value="Armadilha">Armadilha</option>
+            </select>
+          </div>
+          <div class="col-12 col-sm-4">
+            <label for="filtro-atributo" class="form-label">Atributo</label>
+            <select id="filtro-atributo" name="atributo" class="form-select">
+              <option value="">Todos</option>
+              <option value="CHÁ">Chá</option>
+              <option value="TEMPO">Tempo</option>
+              <option value="TINTA">Tinta</option>
+              <option value="ESPELHO">Espelho</option>
+              <option value="FOLHA">Folha</option>
+              <option value="CINZA">Cinza</option>
+            </select>
+          </div>
+          <div class="col-12 col-sm-4">
+            <label for="filtro-deck" class="form-label">Deck</label>
+            <select id="filtro-deck" name="deck" class="form-select">
+              <option value="">Todos</option>
+              <option value="Sonhadores de Desvario">Sonhadores de Desvario</option>
+              <option value="Ordem Cinzenta">Ordem Cinzenta</option>
+            </select>
+          </div>
+        </form>
+
+        <p id="contagem-resultados" class="contagem" aria-live="polite"></p>
+
+        <!-- Estados da interface: carregando, vazio e erro (preenchido pelo JavaScript) -->
+        <div id="status-catalogo" class="status-area"></div>
+
+        <!-- Lista de cartas construída a partir de data/cartas.json -->
+        <div id="lista-cartas" class="row row-cols-2 row-cols-md-3 row-cols-xl-4 g-3 g-md-4"></div>
+
+        <!-- Paginação (montada pelo JavaScript): evita uma rolagem infinita conforme o catálogo cresce -->
+        <nav id="paginacao" class="paginacao" aria-label="Páginas do catálogo" hidden></nav>
+
+        <noscript>
+          <div class="alert alert-warning mt-3">O catálogo precisa de JavaScript ativado para carregar as cartas.</div>
+        </noscript>
+      </div>
+    </section>
+
+    <!-- ===================== REGRAS (accordion) ===================== -->
+    <section id="regras" class="secao secao-regras" aria-labelledby="titulo-regras">
+      <div class="container">
+        <h2 id="titulo-regras" class="titulo-secao">Regras do duelo</h2>
+        <p>As regras de Desvario são inspiradas no Yu-Gi-Oh! clássico, com Monstros Normais, Monstros de Efeito, Magias e Armadilhas.</p>
+
+        <div class="accordion" id="accordion-regras">
+          <div class="accordion-item">
+            <h3 class="accordion-header">
+              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#regra-objetivo"
+                      aria-expanded="true" aria-controls="regra-objetivo">Objetivo e montagem do Deck</button>
+            </h3>
+            <div id="regra-objetivo" class="accordion-collapse collapse show" data-bs-parent="#accordion-regras">
+              <div class="accordion-body">
+                <p>Cada duelista começa com <strong>8000 Pontos de Lucidez (PL)</strong>. Vence quem reduzir os PL do oponente a 0, ou quem fizer o oponente precisar comprar com o Deck vazio.</p>
+                <p class="mb-0">O Deck tem de <strong>40 a 60 cartas</strong>, com no máximo <strong>3 cópias</strong> de cada. A mão inicial tem 5 cartas.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <h3 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#regra-fases"
+                      aria-expanded="false" aria-controls="regra-fases">Fases do turno</button>
+            </h3>
+            <div id="regra-fases" class="accordion-collapse collapse" data-bs-parent="#accordion-regras">
+              <div class="accordion-body">
+                <ol class="mb-0">
+                  <li><strong>Compra:</strong> compre 1 carta, inclusive no primeiro turno do duelo.</li>
+                  <li><strong>Espera:</strong> momento de alguns efeitos de manutenção.</li>
+                  <li><strong>Principal 1:</strong> invoque monstros, ative Magias e baixe cartas.</li>
+                  <li><strong>Batalha:</strong> cada monstro em Posição de Ataque pode atacar uma vez (ninguém ataca no primeiro turno do duelo).</li>
+                  <li><strong>Principal 2:</strong> mesmas ações da Principal 1.</li>
+                  <li><strong>Final:</strong> se tiver mais de 6 cartas na mão, descarte o excesso.</li>
+                </ol>
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <h3 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#regra-invocacao"
+                      aria-expanded="false" aria-controls="regra-invocacao">Invocação e Tributos</button>
+            </h3>
+            <div id="regra-invocacao" class="accordion-collapse collapse" data-bs-parent="#accordion-regras">
+              <div class="accordion-body">
+                <p>Você pode fazer <strong>1 Invocação-Normal ou Baixar 1 monstro</strong> por turno. O número de estrelas (Nível) define o custo:</p>
+                <div class="table-responsive">
+                  <table class="table table-sm tabela-tributos">
+                    <caption>Tributos necessários por Nível do monstro</caption>
+                    <thead><tr><th scope="col">Nível</th><th scope="col">Tributos</th></tr></thead>
+                    <tbody>
+                      <tr><td>1 a 4 ★</td><td>Nenhum</td></tr>
+                      <tr><td>5 ou 6 ★</td><td>1 monstro seu do campo</td></tr>
+                      <tr><td>7 ou mais ★</td><td>2 monstros seus do campo</td></tr>
+                    </tbody>
+                  </table>
+                </div>
+                <p class="mb-0"><strong>Baixar</strong> é colocar o monstro com a face para baixo em Posição de Defesa. Virá-lo depois para Posição de Ataque é uma <strong>Invocação-Flip</strong>, que ativa os efeitos <em>FLIP</em>.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <h3 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#regra-batalha"
+                      aria-expanded="false" aria-controls="regra-batalha">Batalha</button>
+            </h3>
+            <div id="regra-batalha" class="accordion-collapse collapse" data-bs-parent="#accordion-regras">
+              <div class="accordion-body">
+                <ul class="mb-0">
+                  <li><strong>ATK contra ATK:</strong> o de menor ATK é destruído e seu dono perde a diferença em PL. Em caso de empate, os dois são destruídos.</li>
+                  <li><strong>ATK contra DEF:</strong> se o ATK for maior, o defensor é destruído sem dano. Se for menor, o atacante sobrevive, mas o dono dele perde a diferença.</li>
+                  <li><strong>Ataque direto:</strong> se o oponente não tiver monstros, ele perde PL igual ao ATK do atacante.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <h3 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#regra-magias"
+                      aria-expanded="false" aria-controls="regra-magias">Magias e Armadilhas</button>
+            </h3>
+            <div id="regra-magias" class="accordion-collapse collapse" data-bs-parent="#accordion-regras">
+              <div class="accordion-body">
+                <p><strong>Magias</strong> são ativadas no seu turno:</p>
+                <ul>
+                  <li><strong>Normal:</strong> usa e vai para o Cemitério.</li>
+                  <li><strong>Contínua:</strong> permanece no campo.</li>
+                  <li><strong>Equipamento:</strong> fica presa a um monstro.</li>
+                  <li><strong>Campo:</strong> muda o terreno (só 1 em jogo).</li>
+                </ul>
+                <p class="mb-0"><strong>Armadilhas</strong> precisam ser baixadas e só podem ser ativadas a partir do turno seguinte, inclusive no turno do oponente. Tipos: <strong>Normal</strong>, <strong>Contínua</strong> e <strong>Resposta</strong> (anula outras cartas).</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <h3 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#regra-atributos"
+                      aria-expanded="false" aria-controls="regra-atributos">Os seis atributos</button>
+            </h3>
+            <div id="regra-atributos" class="accordion-collapse collapse" data-bs-parent="#accordion-regras">
+              <div class="accordion-body">
+                <div class="row g-4 align-items-center">
+                  <div class="col-12 col-lg-6">
+                    <img class="imagem-atributos" src="img/atributos-desvario.webp" width="840" height="560" loading="lazy"
+                         alt="Seis cenas unidas numa só ilustração, cada uma com o símbolo de um atributo: um mar de chá com barcos-xícara, uma árvore coberta de relógios, castelos flutuantes saindo de um tinteiro roxo, uma biblioteca de espelhos e escadas, um jardim em tabuleiro de xadrez e uma cidade cinzenta com uma torre-régua.">
+                  </div>
+                  <div class="col-12 col-lg-6">
+                    <ul class="row row-cols-1 row-cols-sm-2 g-3 list-unstyled mb-0 lista-atributos">
+                      <li class="col"><span class="icone-atributo" data-atributo="cha" aria-hidden="true"></span> <strong>CHÁ:</strong> calor, conforto e adivinhação.</li>
+                      <li class="col"><span class="icone-atributo" data-atributo="tempo" aria-hidden="true"></span> <strong>TEMPO:</strong> relógios, atrasos e horas tortas.</li>
+                      <li class="col"><span class="icone-atributo" data-atributo="tinta" aria-hidden="true"></span> <strong>TINTA:</strong> sonhos, cores e imaginação.</li>
+                      <li class="col"><span class="icone-atributo" data-atributo="espelho" aria-hidden="true"></span> <strong>ESPELHO:</strong> reflexos, inversões e ilusão.</li>
+                      <li class="col"><span class="icone-atributo" data-atributo="folha" aria-hidden="true"></span> <strong>FOLHA:</strong> jardins, plantas e xadrez vivo.</li>
+                      <li class="col"><span class="icone-atributo" data-atributo="cinza" aria-hidden="true"></span> <strong>CINZA:</strong> a Ordem Cinzenta, regras e carimbos.</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== DECKS (abas, montadas a partir dos dados) ===================== -->
+    <section id="decks" class="secao secao-decks" aria-labelledby="titulo-decks">
+      <div class="container">
+        <h2 id="titulo-decks" class="titulo-secao">Decks iniciais</h2>
+        <p>Os dois decks prontos têm 40 cartas cada. Cada pilha mostra quantas cópias da carta estão no deck; selecione uma carta para ver os detalhes.</p>
+
+        <ul class="nav nav-pills mb-3" id="abas-decks" role="tablist">
+          <li class="nav-item" role="presentation">
+            <button class="nav-link active" id="aba-sonhadores" data-bs-toggle="pill" data-bs-target="#painel-sonhadores"
+                    type="button" role="tab" aria-controls="painel-sonhadores" aria-selected="true">Sonhadores de Desvario</button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link" id="aba-cinzenta" data-bs-toggle="pill" data-bs-target="#painel-cinzenta"
+                    type="button" role="tab" aria-controls="painel-cinzenta" aria-selected="false">Ordem Cinzenta</button>
+          </li>
+        </ul>
+        <div class="tab-content">
+          <div class="tab-pane fade show active" id="painel-sonhadores" role="tabpanel" aria-labelledby="aba-sonhadores" tabindex="0"
+               data-deck="Sonhadores de Desvario"></div>
+          <div class="tab-pane fade" id="painel-cinzenta" role="tabpanel" aria-labelledby="aba-cinzenta" tabindex="0"
+               data-deck="Ordem Cinzenta"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== 3. SOBRE O PROJETO ===================== -->
+    <section id="sobre" class="secao secao-sobre" aria-labelledby="titulo-sobre">
+      <div class="container">
+        <h2 id="titulo-sobre" class="titulo-secao">Sobre o projeto</h2>
+        <div class="row g-4">
+          <section class="col-12 col-md-6 col-xl-3">
+            <h3 class="h6">O que é</h3>
+            <p>Catálogo interativo das cartas de <em>Desvario</em>, um jogo de duelo de cartas autoral. É o projeto da disciplina de Desenvolvimento Web (UNEMAT) e vai evoluir ao longo do semestre até um jogo completo.</p>
+          </section>
+          <section class="col-12 col-md-6 col-xl-3">
+            <h3 class="h6">Como funciona</h3>
+            <p>A lista de cartas é carregada por AJAX (XMLHttpRequest) de <code>data/cartas.json</code>. Ao abrir uma carta, uma nova requisição busca os detalhes em <code>data/cartas/{id}.json</code>. Busca, filtros, ordenação e paginação funcionam sem recarregar a página.</p>
+          </section>
+          <section class="col-12 col-md-6 col-xl-3">
+            <h3 class="h6">Tecnologias</h3>
+            <ul>
+              <li>HTML5 semântico e CSS3</li>
+              <li>JavaScript: DOM, eventos, callbacks e métodos de vetores</li>
+              <li>Bootstrap 5.3: grid, navbar, cards, formulário, modal, accordion, abas, collapse e paginação</li>
+            </ul>
+          </section>
+          <section class="col-12 col-md-6 col-xl-3">
+            <h3 class="h6">Créditos</h3>
+            <ul>
+              <li><strong>Textos, cartas e dados:</strong> autorais</li>
+              <li><strong>Regras:</strong> inspiradas no Yu-Gi-Oh! clássico</li>
+              <li><strong>Logo e ilustrações:</strong> gerados por IA a partir de descrições autorais</li>
+              <li><strong>Interface:</strong> Bootstrap 5 e fontes do Google Fonts</li>
+            </ul>
+          </section>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===================== RODAPÉ ===================== -->
+  <footer class="rodape">
+    <div class="container d-flex flex-column flex-md-row justify-content-between align-items-md-center gap-3">
+      <div class="d-flex align-items-center gap-3">
+        <!-- Xícara de Desvario desenhada com formas básicas do SVG (círculo, retângulo e caminhos) -->
+        <svg class="xicara-svg" viewBox="0 0 64 64" width="56" height="56" role="img" aria-label="Xícara de chá, símbolo de Desvario">
+          <circle class="xicara-svg__fundo" cx="32" cy="32" r="30"/>
+          <g class="xicara-svg__vapor">
+            <path d="M25 22c-3-4 3-6 0-10"/>
+            <path d="M32 22c-3-4 3-6 0-10"/>
+            <path d="M39 22c-3-4 3-6 0-10"/>
+          </g>
+          <g class="xicara-svg__xicara">
+            <path class="xicara-svg__corpo" d="M17 27h28v7a12 12 0 0 1-12 12h-4a12 12 0 0 1-12-12z"/>
+            <path class="xicara-svg__alca" d="M45 30h3a5 5 0 0 1 0 10h-4"/>
+            <rect class="xicara-svg__pires" x="12" y="48" width="38" height="4" rx="2"/>
+          </g>
+        </svg>
+        <p class="mb-0">Desvario: O Reino do Avesso · Projeto de Desenvolvimento Web · UNEMAT · 2026</p>
+      </div>
+      <p class="mb-0">
+        Desenvolvido por Carlos Eduardo Pena Fiel Menon de Freitas ·
+        <a href="https://github.com/carloseduardosnp01-art/desvario-catalogo">Código no GitHub</a> ·
+        <a class="link-topo" href="#inicio">
+          Voltar ao topo
+          <svg class="icone-topo" viewBox="0 0 16 16" width="14" height="14" aria-hidden="true">
+            <path d="M8 13V3M3.5 7.5L8 3l4.5 4.5"/>
+          </svg>
+        </a>
+      </p>
+    </div>
+  </footer>
+
+  <!-- ===================== MODAL DE DETALHES ===================== -->
+  <div class="modal fade" id="modal-carta" tabindex="-1" aria-labelledby="modal-carta-titulo" aria-hidden="true">
+    <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 class="modal-title h4" id="modal-carta-titulo">Detalhes da carta</h2>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+        </div>
+        <div class="modal-body">
+          <div id="detalhe-status" class="status-area"></div>
+
+          <div id="detalhe-conteudo" class="row g-4" hidden>
+            <!-- Carta completa -->
+            <div class="col-12 col-md-5">
+              <article class="card carta carta--grande" id="detalhe-carta" aria-label="Carta completa">
+                <div class="carta__topo">
+                  <h3 class="carta__nome" id="detalhe-nome"></h3>
+                  <span class="icone-atributo" id="detalhe-atributo" role="img"></span>
+                </div>
+                <p class="carta__nivel" id="detalhe-nivel"></p>
+                <img class="carta__arte" id="detalhe-arte" src="img/cartas/dsv-006-sonhador-de-tinta.webp" alt="" width="640" height="640">
+                <div class="card-body carta__caixa-texto">
+                  <p class="carta__tipo" id="detalhe-tipo"></p>
+                  <p class="carta__texto" id="detalhe-texto"></p>
+                  <p class="carta__stats" id="detalhe-stats"></p>
+                </div>
+              </article>
+            </div>
+
+            <!-- Informações adicionais (vindas de data/cartas/{id}.json) -->
+            <div class="col-12 col-md-7">
+              <dl class="row ficha">
+                <div class="col-6 col-lg-4"><dt>Código</dt><dd id="detalhe-codigo"></dd></div>
+                <div class="col-6 col-lg-4"><dt>Categoria</dt><dd id="detalhe-categoria"></dd></div>
+                <div class="col-6 col-lg-4"><dt>Tipo</dt><dd id="detalhe-subtipo"></dd></div>
+                <div class="col-6 col-lg-4" id="linha-invocacao"><dt>Invocação</dt><dd id="detalhe-invocacao"></dd></div>
+                <div class="col-6 col-lg-4"><dt>Região</dt><dd id="detalhe-regiao"></dd></div>
+                <div class="col-6 col-lg-4"><dt>Deck</dt><dd id="detalhe-deck"></dd></div>
+              </dl>
+
+              <section id="bloco-efeito" aria-labelledby="titulo-efeito">
+                <h3 class="h6 titulo-ficha" id="titulo-efeito">Efeito</h3>
+                <p id="detalhe-efeito"></p>
+              </section>
+
+              <section id="bloco-historia" aria-labelledby="titulo-historia-carta">
+                <h3 class="h6 titulo-ficha" id="titulo-historia-carta">Texto de história</h3>
+                <blockquote class="citacao-carta"><p id="detalhe-historia"></p></blockquote>
+              </section>
+
+              <section aria-labelledby="titulo-arte">
+                <h3 class="h6 titulo-ficha" id="titulo-arte">Sobre a ilustração</h3>
+                <p id="detalhe-descricao-arte"></p>
+                <p class="small text-body-secondary mb-0" id="detalhe-credito"></p>
+              </section>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer justify-content-between">
+          <div class="d-flex align-items-center gap-2">
+            <button type="button" class="btn btn-outline-secondary" id="detalhe-anterior" aria-label="Carta anterior">‹ Anterior</button>
+            <span class="posicao-carta" id="detalhe-posicao"></span>
+            <button type="button" class="btn btn-outline-secondary" id="detalhe-proxima" aria-label="Próxima carta">Próxima ›</button>
+          </div>
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

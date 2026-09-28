@@ -1,0 +1,12 @@
+{
+  "id": 18,
+  "codigo": "DSV-018",
+  "tipoMonstro": null,
+  "atk": null,
+  "def": null,
+  "efeito": "Quando um monstro do oponente declarar um ataque: anule o ataque e encerre a Fase de Batalha.",
+  "historia": null,
+  "regiao": "Biblioteca de Portas",
+  "descricaoArte": "Porta de madeira ornamentada, entreaberta, flutuando no meio do nada sem parede. Luz colorida sai pela fresta. Um soldado-régua cinzento dá de cara com ela no meio do ataque.",
+  "creditoArte": "Ilustração gerada por IA."
+}

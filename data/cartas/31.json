@@ -1,0 +1,12 @@
+{
+  "id": 31,
+  "codigo": "DSV-031",
+  "tipoMonstro": null,
+  "atk": null,
+  "def": null,
+  "efeito": "Uma vez por turno: escolha 1 monstro com a face para cima que o oponente controla e mude a posição de batalha dele.",
+  "historia": null,
+  "regiao": "Cidadela Cinzenta",
+  "descricaoArte": "Pergaminho oficial pregado num muro cinza, letras rígidas e selo de cera. Sombras de criaturas coloridas se encolhem e se escondem.",
+  "creditoArte": "Ilustração gerada por IA."
+}

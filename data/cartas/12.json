@@ -1,0 +1,12 @@
+{
+  "id": 12,
+  "codigo": "DSV-012",
+  "tipoMonstro": "Burocrata",
+  "atk": 1300,
+  "def": 900,
+  "efeito": "FLIP: escolha 1 monstro que o oponente controla e destrua-o.",
+  "historia": "INDEFERIDO. INDEFERIDO. INDEFERIDO.",
+  "regiao": "Cidadela Cinzenta",
+  "descricaoArte": "Homenzinho atarracado de terno cinza com um carimbo gigante no lugar da cabeça, carimbando uma flor colorida que vira cinza na hora. Pilhas de papéis. Tudo cinza, exceto a flor.",
+  "creditoArte": "Ilustração gerada por IA."
+}

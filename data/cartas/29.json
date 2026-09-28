@@ -1,0 +1,12 @@
+{
+  "id": 29,
+  "codigo": "DSV-029",
+  "tipoMonstro": null,
+  "atk": null,
+  "def": null,
+  "efeito": "Todos os monstros CINZA no campo ganham 300 de ATK e DEF. Todos os monstros que não são CINZA perdem 200 de ATK.",
+  "historia": null,
+  "regiao": "Cidadela Cinzenta",
+  "descricaoArte": "Cidade monumental de prédios idênticos, retos e cinzentos, numa grade perfeita sob um céu sem nuvens, com uma torre-régua altíssima no centro. Nenhuma cor, sem personagens.",
+  "creditoArte": "Ilustração gerada por IA."
+}

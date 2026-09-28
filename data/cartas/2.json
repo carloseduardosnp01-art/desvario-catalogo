@@ -1,0 +1,12 @@
+{
+  "id": 2,
+  "codigo": "DSV-002",
+  "tipoMonstro": "Brinquedo",
+  "atk": 1700,
+  "def": 1300,
+  "efeito": null,
+  "historia": "Costurado com botões de mil casacos esquecidos. Jurou proteger Desvario até que a última linha se solte.",
+  "regiao": "Jardim de Xadrez Vivo",
+  "descricaoArte": "Soldado de brinquedo feito inteiramente de botões coloridos, costurados com linha vermelha. Agulha de costura como espada e dedal como capacete. Pose heroica sobre um carretel.",
+  "creditoArte": "Ilustração gerada por IA."
+}

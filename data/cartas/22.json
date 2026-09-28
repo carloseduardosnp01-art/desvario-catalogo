@@ -1,0 +1,12 @@
+{
+  "id": 22,
+  "codigo": "DSV-022",
+  "tipoMonstro": "Burocrata",
+  "atk": 200,
+  "def": 300,
+  "efeito": "FLIP: olhe a mão do oponente.",
+  "historia": "Prende-se a qualquer documento, e a qualquer segredo.",
+  "regiao": "Cidadela Cinzenta",
+  "descricaoArte": "Clipe de papel retorcido em forma de bichinho, com óculos escuros minúsculos, espiando de trás de uma pilha de pastas, lupa na mão.",
+  "creditoArte": "Ilustração gerada por IA."
+}

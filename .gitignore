@@ -1,0 +1,19 @@
+# Materiais da disciplina (não fazem parte do projeto)
+Conteudos devweb2/
+Guia Avaliação 1/
+
+# Configurações locais de editor/ferramentas
+.claude/
+.vscode/
+*.code-workspace
+
+# Sistema operacional
+Thumbs.db
+Desktop.ini
+.DS_Store
+
+# Arquivos temporários do Office
+~$*
+
+# Artes em resolução original (antes do recorte para o site)
+artes-originais/

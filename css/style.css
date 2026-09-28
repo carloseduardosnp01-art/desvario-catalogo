@@ -1,0 +1,1200 @@
+/* ==========================================================================
+   Desvario: estilos próprios (complementam o Bootstrap 5)
+   ========================================================================== */
+
+/* ---------- Fontes (arquivos em /fontes, licença SIL Open Font License) ---------- */
+@font-face {
+  font-family: 'Cinzel';
+  font-style: normal;
+  font-weight: 600 700;
+  font-display: swap;
+  src: url("../fontes/cinzel.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: 'Crimson Pro';
+  font-style: normal;
+  font-weight: 400 600;
+  font-display: swap;
+  src: url("../fontes/crimson-pro.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: 'Crimson Pro';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url("../fontes/crimson-pro-italico.woff2") format("woff2");
+}
+
+/* ---------- Variáveis ---------- */
+:root {
+  --roxo: #3b2a5a;
+  --roxo-escuro: #221733;
+  --tinta: #6b3fa0;
+  --tinta-escura: #55307f;
+  --dourado: #c9a227;
+  --pergaminho: #f7f1e3;
+  --pergaminho-escuro: #efe4c8;
+  --texto: #2b2233;
+
+  /* Atributos */
+  --cor-cha: #c8782a;
+  --cor-tempo: #8a6a3a;
+  --cor-tinta: #6b3fa0;
+  --cor-espelho: #3f7f96;
+  --cor-folha: #4e8f4a;
+  --cor-cinza: #5e5e5e;
+  --cor-magia: #1d8a6a;
+  --cor-armadilha: #a8446f;
+
+  /* Molduras das cartas (cores inspiradas no Yu-Gi-Oh! clássico) */
+  --moldura-normal: #d6b65a;
+  --moldura-efeito: #cf7b45;
+  --moldura-magia: #1f8f74;
+  --moldura-armadilha: #b04a7c;
+
+  --altura-navbar: 64px;
+  --fonte-titulo: 'Cinzel', Georgia, serif;
+  --fonte-texto: 'Crimson Pro', Georgia, serif;
+}
+
+/* ---------- Base ---------- */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--pergaminho);
+  color: var(--texto);
+  font-family: var(--fonte-texto);
+  font-size: 1.125rem;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--fonte-titulo);
+  font-weight: 700;
+}
+
+section[id] {
+  scroll-margin-top: var(--altura-navbar);
+}
+
+a {
+  color: var(--tinta);
+}
+
+.pular-link {
+  position: absolute;
+  top: .5rem;
+  left: .5rem;
+  z-index: 2000;
+  padding: .5rem 1rem;
+  background: #fff;
+  color: var(--roxo);
+  border-radius: .375rem;
+}
+
+/* ---------- Botões e cores utilitárias ---------- */
+.btn-desvario {
+  --bs-btn-color: #fff;
+  --bs-btn-bg: var(--tinta);
+  --bs-btn-border-color: var(--tinta);
+  --bs-btn-hover-color: #fff;
+  --bs-btn-hover-bg: var(--tinta-escura);
+  --bs-btn-hover-border-color: var(--tinta-escura);
+  --bs-btn-active-bg: var(--roxo);
+  --bs-btn-active-border-color: var(--roxo);
+  --bs-btn-focus-shadow-rgb: 107, 63, 160;
+}
+
+.text-desvario {
+  color: var(--tinta);
+}
+
+/* ---------- Navegação ---------- */
+.navbar-desvario {
+  background-color: var(--roxo-escuro);
+  min-height: var(--altura-navbar);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, .25);
+}
+
+.logo-navbar {
+  display: block;
+  width: auto;
+  height: 44px;
+}
+
+.navbar-desvario .nav-link {
+  font-family: var(--fonte-titulo);
+  font-size: 1rem;
+}
+
+/* ---------- Apresentação (hero) ---------- */
+.secao-hero {
+  overflow-x: clip;
+  padding: 4rem 0;
+  color: #fff;
+  background:
+    radial-gradient(circle at 15% 20%, rgba(200, 120, 42, .35), transparent 45%),
+    radial-gradient(circle at 85% 80%, rgba(63, 127, 150, .4), transparent 50%),
+    linear-gradient(135deg, var(--roxo-escuro), var(--roxo) 55%, var(--tinta));
+}
+
+.sobretitulo {
+  color: var(--dourado);
+  font-family: var(--fonte-titulo);
+  text-transform: uppercase;
+  letter-spacing: .12em;
+  font-size: .9rem;
+  margin-bottom: .5rem;
+}
+
+.titulo-principal {
+  font-family: var(--fonte-titulo);
+  font-size: clamp(2rem, 6vw, 3.5rem);
+  line-height: 1.1;
+}
+
+.titulo-principal span {
+  display: block;
+  font-family: var(--fonte-titulo);
+  font-size: .55em;
+  color: var(--pergaminho-escuro);
+}
+
+.logo-hero {
+  display: block;
+  width: 100%;
+  max-width: 560px;
+  height: auto;
+  margin-bottom: .25rem;
+  filter: drop-shadow(0 6px 16px rgba(0, 0, 0, .35));
+}
+
+.secao-hero .lead {
+  font-size: 1.25rem;
+  max-width: 38rem;
+}
+
+/* Leque de cartas reais na apresentação */
+.leque {
+  position: relative;
+  width: min(100%, 440px);
+  aspect-ratio: 11 / 10;
+  margin-inline: auto;
+  animation: flutuar 6s ease-in-out infinite;
+}
+
+.leque__carta {
+  position: absolute;
+  top: 6%;
+  left: 50%;
+  width: 46%;
+  padding: .35rem;
+  color: var(--texto);
+  text-align: left;
+  cursor: pointer;
+  transform-origin: 50% 110%;
+  transition: transform .35s ease, box-shadow .35s ease;
+}
+
+.leque__carta .carta__topo,
+.leque__carta .carta__nivel,
+.leque__carta .carta__caixa-texto {
+  display: block;
+}
+
+.leque__carta .carta__nome {
+  display: block;
+  font-family: var(--fonte-titulo);
+  font-size: .8rem;
+  font-weight: 700;
+}
+
+.leque__carta .carta__nivel {
+  min-height: 1.2rem;
+  margin: .15rem .15rem;
+  line-height: 1.2rem;
+}
+
+.leque__carta .estrelas {
+  font-size: .75rem;
+}
+
+.leque__carta .subtipo-magia,
+.leque__carta .carta__tipo {
+  font-size: .72rem;
+}
+
+.leque__carta .carta__caixa-texto {
+  margin-top: .35rem;
+  padding: .25rem .4rem;
+}
+
+.leque__carta .carta__tipo {
+  margin: 0;
+}
+
+/* Deslocamentos em % da própria carta: o leque cabe em qualquer largura sem rolagem horizontal. */
+.leque__carta--esquerda { transform: translateX(-88%) rotate(-12deg); }
+.leque__carta--direita { transform: translateX(-12%) rotate(12deg); }
+.leque__carta--centro { z-index: 2; transform: translateX(-50%) translateY(-4%); }
+
+.leque:hover .leque__carta--esquerda,
+.leque:focus-within .leque__carta--esquerda { transform: translateX(-98%) rotate(-15deg); }
+.leque:hover .leque__carta--direita,
+.leque:focus-within .leque__carta--direita { transform: translateX(-2%) rotate(15deg); }
+
+.leque__carta:hover,
+.leque__carta:focus-visible {
+  z-index: 3;
+  box-shadow: 0 14px 30px rgba(0, 0, 0, .45);
+}
+
+.leque__carta:focus-visible {
+  outline: 3px solid var(--dourado);
+  outline-offset: 3px;
+}
+
+@media (max-width: 575.98px) {
+  .leque {
+    width: 86%;
+  }
+}
+
+@keyframes flutuar {
+  0%, 100% { translate: 0 0; }
+  50% { translate: 0 -8px; }
+}
+
+/* ---------- Seções ---------- */
+.secao {
+  padding: 3.5rem 0;
+}
+
+.titulo-secao {
+  color: var(--roxo);
+  font-size: clamp(1.6rem, 4vw, 2.2rem);
+  margin-bottom: 1rem;
+}
+
+.titulo-secao::after {
+  content: '';
+  display: block;
+  width: 4rem;
+  height: 3px;
+  margin-top: .5rem;
+  background: linear-gradient(90deg, var(--tinta), var(--dourado));
+  border-radius: 2px;
+}
+
+.secao-historia,
+.secao-regras {
+  background-color: var(--pergaminho-escuro);
+}
+
+/* Capítulos da história */
+.intro-historia {
+  max-width: 46rem;
+  font-size: 1.2rem;
+}
+
+.capitulos {
+  display: grid;
+  gap: 3rem;
+  margin: 2.5rem 0 3.5rem;
+}
+
+.capitulo__imagem {
+  display: block;
+  width: 100%;
+  max-width: 420px;
+  height: auto;
+  margin-inline: auto;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border: 5px solid #fff;
+  border-radius: .75rem;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, .22);
+}
+
+.capitulo__numero {
+  margin-bottom: .25rem;
+  color: #7d5f14;
+  font-family: var(--fonte-titulo);
+  font-size: .85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .14em;
+}
+
+.capitulo__titulo {
+  color: var(--roxo);
+  font-size: clamp(1.4rem, 3vw, 1.9rem);
+}
+
+@media (min-width: 768px) {
+  .capitulo--invertido > :first-child {
+    order: 2;
+  }
+}
+
+.titulo-regioes {
+  color: var(--roxo);
+  font-size: 1.35rem;
+  margin-bottom: .5rem;
+}
+
+/* Explorador de regiões (abas do Bootstrap) */
+[data-atributo="cha"] { --cor-regiao: var(--cor-cha); }
+[data-atributo="tempo"] { --cor-regiao: var(--cor-tempo); }
+[data-atributo="espelho"] { --cor-regiao: var(--cor-espelho); }
+[data-atributo="folha"] { --cor-regiao: var(--cor-folha); }
+[data-atributo="cinza"] { --cor-regiao: var(--cor-cinza); }
+
+.seletor-regioes {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: .75rem;
+  margin: 1rem 0 1.25rem;
+}
+
+.seletor-regioes .nav-link {
+  display: flex;
+  flex-direction: column;
+  gap: .4rem;
+  width: 100%;
+  height: 100%;
+  padding: .4rem .4rem .6rem;
+  color: var(--roxo);
+  font-family: var(--fonte-titulo);
+  font-size: .9rem;
+  font-weight: 600;
+  line-height: 1.2;
+  background: rgba(255, 255, 255, .7);
+  border: 2px solid transparent;
+  border-bottom: 4px solid var(--cor-regiao, var(--tinta));
+  border-radius: .5rem;
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.seletor-regioes .nav-link img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+  border-radius: .3rem;
+  filter: saturate(.75);
+}
+
+.seletor-regioes .nav-link:hover,
+.seletor-regioes .nav-link:focus-visible {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, .15);
+}
+
+.seletor-regioes.nav-pills .nav-link.active {
+  color: var(--roxo);
+  background: #fff;
+  border-color: var(--cor-regiao, var(--tinta));
+  box-shadow: 0 6px 14px rgba(0, 0, 0, .15);
+}
+
+.seletor-regioes .nav-link.active img {
+  filter: none;
+}
+
+.regiao {
+  padding: 1.25rem;
+  background: rgba(255, 255, 255, .7);
+  border-top: 5px solid var(--cor-regiao, var(--tinta));
+  border-radius: .75rem;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, .08);
+}
+
+.regiao__imagem {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+  border-radius: .5rem;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, .2);
+}
+
+.regiao__atributo {
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+  margin-bottom: .5rem;
+  color: #5a4d66;
+  font-family: var(--fonte-titulo);
+  font-size: .85rem;
+  font-weight: 700;
+  letter-spacing: .05em;
+}
+
+.regiao__nome {
+  color: var(--roxo);
+  font-size: clamp(1.4rem, 3vw, 1.8rem);
+}
+
+.regiao__ameaca {
+  padding: .6rem .8rem;
+  font-size: 1.05rem;
+  background: #ecebea;
+  border-left: 4px solid var(--cor-cinza);
+  border-radius: .25rem;
+}
+
+.lista-cartas-regiao {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .5rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.carta-regiao {
+  --moldura: var(--moldura-normal);
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+  padding: .25rem .75rem .25rem .25rem;
+  color: var(--texto);
+  font-size: 1rem;
+  background: #fff;
+  border: 1px solid rgba(0, 0, 0, .15);
+  border-left: 5px solid var(--moldura);
+  border-radius: 2rem;
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.carta-regiao[data-moldura="efeito"] { --moldura: var(--moldura-efeito); }
+.carta-regiao[data-moldura="magia"] { --moldura: var(--moldura-magia); }
+.carta-regiao[data-moldura="armadilha"] { --moldura: var(--moldura-armadilha); }
+
+.carta-regiao:hover,
+.carta-regiao:focus-visible {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, .15);
+}
+
+.carta-regiao__arte {
+  width: 34px;
+  height: 34px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+/* ---------- Filtros e estados ---------- */
+.painel-filtros {
+  padding: 1rem;
+  margin: 0 0 1rem;
+  background: #fff;
+  border: 1px solid rgba(59, 42, 90, .15);
+  border-radius: .5rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, .05);
+}
+
+.painel-filtros .form-label {
+  font-family: var(--fonte-titulo);
+  font-size: .95rem;
+  font-weight: 600;
+}
+
+.contagem {
+  min-height: 1.5em;
+  color: #5a4d66;
+  font-style: italic;
+  scroll-margin-top: calc(var(--altura-navbar) + 1rem);
+}
+
+/* Paginação */
+.paginacao {
+  margin-top: 2rem;
+}
+
+.pagination {
+  --bs-pagination-color: var(--roxo);
+  --bs-pagination-hover-color: var(--tinta-escura);
+  --bs-pagination-focus-color: var(--tinta-escura);
+  --bs-pagination-active-bg: var(--tinta);
+  --bs-pagination-active-border-color: var(--tinta);
+  --bs-pagination-focus-box-shadow: 0 0 0 .25rem rgba(107, 63, 160, .3);
+  font-family: var(--fonte-titulo);
+  font-weight: 600;
+}
+
+.status-area:empty {
+  display: none;
+}
+
+.estado {
+  padding: 2rem 1rem;
+  margin-bottom: 1rem;
+  text-align: center;
+  border-radius: .5rem;
+}
+
+.estado--carregando,
+.estado--vazio {
+  border: 2px dashed rgba(59, 42, 90, .25);
+  background: rgba(255, 255, 255, .5);
+}
+
+.estado--carregando .spinner-border {
+  width: 3rem;
+  height: 3rem;
+  margin-bottom: .75rem;
+}
+
+/* ---------- Ícone de atributo ---------- */
+.icone-atributo {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 2rem;
+  height: 2rem;
+  padding: .3rem;
+  color: #f7f1e3;
+  background-color: var(--cor-icone, var(--tinta));
+  /* Brilho suave que imita a textura pintada dos emblemas */
+  background-image: radial-gradient(circle at 35% 30%, rgba(255, 255, 255, .22), transparent 65%);
+  background-position: center;
+  background-size: cover;
+  border: 2px solid var(--dourado);
+  border-radius: 50%;
+  box-shadow: 0 0 0 1px rgba(60, 40, 10, .45), 0 1px 4px rgba(0, 0, 0, .45);
+  vertical-align: middle;
+}
+
+.icone-atributo[data-atributo="cha"] { --cor-icone: var(--cor-cha); }
+.icone-atributo[data-atributo="tempo"] { --cor-icone: var(--cor-tempo); }
+.icone-atributo[data-atributo="tinta"] { --cor-icone: var(--cor-tinta); }
+.icone-atributo[data-atributo="espelho"] { --cor-icone: var(--cor-espelho); }
+.icone-atributo[data-atributo="folha"] { --cor-icone: var(--cor-folha); }
+.icone-atributo[data-atributo="cinza"] { --cor-icone: var(--cor-cinza); }
+.icone-atributo[data-atributo="magia"] { --cor-icone: var(--cor-magia); }
+.icone-atributo[data-atributo="armadilha"] { --cor-icone: var(--cor-armadilha); }
+
+/* Imagem de cada ícone: emblemas pintados (atributos) e desenhos de Magia e Armadilha */
+.icone-atributo[data-atributo="cha"] { background-image: url("../img/atributos/cha.webp"); }
+.icone-atributo[data-atributo="tempo"] { background-image: url("../img/atributos/tempo.webp"); }
+.icone-atributo[data-atributo="tinta"] { background-image: url("../img/atributos/tinta.webp"); }
+.icone-atributo[data-atributo="espelho"] { background-image: url("../img/atributos/espelho.webp"); }
+.icone-atributo[data-atributo="folha"] { background-image: url("../img/atributos/folha.webp"); }
+.icone-atributo[data-atributo="cinza"] { background-image: url("../img/atributos/cinza.webp"); }
+.icone-atributo[data-atributo="magia"] { background-image: url("../img/atributos/magia.svg"); }
+.icone-atributo[data-atributo="armadilha"] { background-image: url("../img/atributos/armadilha.svg"); }
+
+.imagem-atributos {
+  display: block;
+  width: 100%;
+  max-width: 560px;
+  height: auto;
+  margin-inline: auto;
+}
+
+.lista-atributos li {
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+}
+
+/* ---------- Carta ---------- */
+.carta {
+  --moldura: var(--moldura-normal);
+  padding: .5rem;
+  background:
+    linear-gradient(160deg, rgba(255, 255, 255, .25), transparent 40%, rgba(0, 0, 0, .15)),
+    var(--moldura);
+  border: 2px solid rgba(0, 0, 0, .35);
+  border-radius: .6rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, .18);
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.carta[data-moldura="efeito"] { --moldura: var(--moldura-efeito); }
+.carta[data-moldura="magia"] { --moldura: var(--moldura-magia); }
+.carta[data-moldura="armadilha"] { --moldura: var(--moldura-armadilha); }
+
+#lista-cartas .carta:hover,
+#lista-cartas .carta:focus-within {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, .25);
+}
+
+.carta__topo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: .5rem;
+  padding: .3rem .5rem;
+  background: rgba(255, 255, 255, .6);
+  border: 1px solid rgba(0, 0, 0, .3);
+  border-radius: .3rem;
+}
+
+.carta__nome {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.2;
+  overflow-wrap: anywhere;
+}
+
+.carta__nivel {
+  min-height: 1.6rem;
+  margin: .25rem .25rem;
+  text-align: right;
+  line-height: 1.6rem;
+}
+
+.estrelas {
+  color: #f2b01e;
+  font-size: 1.1rem;
+  letter-spacing: .05em;
+  text-shadow: 0 0 2px #7a3b00, 0 1px 1px rgba(0, 0, 0, .6);
+}
+
+.subtipo-magia {
+  padding: .05rem .4rem;
+  font-family: var(--fonte-titulo);
+  font-size: .8rem;
+  font-weight: 700;
+  color: #fff;
+  background: rgba(0, 0, 0, .4);
+  border-radius: .25rem;
+}
+
+.carta__arte {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  background-color: #d9d2c3;
+  border: 3px solid rgba(0, 0, 0, .4);
+}
+
+.carta__caixa-texto {
+  margin-top: .5rem;
+  padding: .5rem .6rem;
+  background-color: #f8f1dc;
+  border: 1px solid rgba(0, 0, 0, .3);
+  border-radius: .25rem;
+}
+
+.carta__tipo {
+  margin-bottom: .25rem;
+  font-family: var(--fonte-titulo);
+  font-size: .8rem;
+  font-weight: 700;
+}
+
+.carta__resumo,
+.carta__texto {
+  margin-bottom: 0;
+  font-size: 1rem;
+  line-height: 1.3;
+}
+
+.carta__stats {
+  margin: .5rem 0 0;
+  padding-top: .25rem;
+  text-align: right;
+  font-family: var(--fonte-titulo);
+  font-weight: 700;
+  font-size: .9rem;
+  border-top: 1px solid rgba(0, 0, 0, .4);
+  white-space: pre;
+}
+
+.carta__rodape {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: .5rem;
+  margin-top: .5rem;
+  padding: .4rem 0 0;
+  background: transparent;
+  border-top: 0;
+}
+
+.carta__codigo {
+  font-family: var(--fonte-titulo);
+  font-size: .8rem;
+  font-weight: 700;
+  color: rgba(0, 0, 0, .75);
+}
+
+.carta[data-moldura="magia"] .carta__codigo,
+.carta[data-moldura="armadilha"] .carta__codigo {
+  color: #fff;
+}
+
+/* Catálogo no celular: 2 cartas por linha, em versão compacta */
+@media (max-width: 767.98px) {
+  #lista-cartas .carta {
+    padding: .3rem;
+  }
+
+  #lista-cartas .carta__topo {
+    gap: .25rem;
+    padding: .2rem .3rem;
+  }
+
+  #lista-cartas .carta__nome {
+    font-size: .82rem;
+  }
+
+  #lista-cartas .icone-atributo {
+    width: 1.4rem;
+    height: 1.4rem;
+    padding: .2rem;
+    border-width: 1.5px;
+  }
+
+  #lista-cartas .carta__nivel {
+    min-height: 1.1rem;
+    margin: .15rem;
+    line-height: 1.1rem;
+  }
+
+  #lista-cartas .estrelas {
+    font-size: .8rem;
+  }
+
+  #lista-cartas .subtipo-magia,
+  #lista-cartas .carta__tipo {
+    font-size: .75rem;
+  }
+
+  #lista-cartas .carta__arte {
+    border-width: 2px;
+  }
+
+  #lista-cartas .carta__caixa-texto {
+    margin-top: .3rem;
+    padding: .3rem .4rem;
+  }
+
+  #lista-cartas .carta__resumo {
+    font-size: .88rem;
+    line-height: 1.3;
+  }
+
+  #lista-cartas .carta__rodape {
+    flex-direction: column;
+    align-items: stretch;
+    gap: .25rem;
+    margin-top: .3rem;
+    padding-top: .2rem;
+  }
+
+  #lista-cartas .carta__codigo {
+    font-size: .78rem;
+    text-align: center;
+  }
+
+  #lista-cartas .carta__rodape .btn {
+    padding: .3rem .4rem;
+    font-size: .88rem;
+  }
+}
+
+/* Carta grande no modal */
+.carta--grande {
+  max-width: 380px;
+  margin-inline: auto;
+}
+
+.carta--grande .carta__nome {
+  font-size: 1.15rem;
+}
+
+/* ---------- Modal (ficha) ---------- */
+.modal-content {
+  background-color: var(--pergaminho);
+}
+
+.modal-title {
+  color: var(--roxo);
+}
+
+.ficha {
+  margin-bottom: 1rem;
+}
+
+.ficha dt {
+  font-family: var(--fonte-titulo);
+  font-size: .8rem;
+  color: #5a4d66;
+  text-transform: uppercase;
+  letter-spacing: .05em;
+}
+
+.ficha dd {
+  margin-bottom: .75rem;
+  font-weight: 600;
+}
+
+.titulo-ficha {
+  color: var(--roxo);
+  margin-bottom: .5rem;
+}
+
+.citacao-carta {
+  margin: 0 0 1rem;
+  padding: .5rem 1rem;
+  font-style: italic;
+  border-left: 4px solid var(--dourado);
+  background: rgba(255, 255, 255, .6);
+}
+
+.citacao-carta p {
+  margin: 0;
+}
+
+.posicao-carta {
+  min-width: 4.5rem;
+  color: #5a4d66;
+  font-size: .95rem;
+  text-align: center;
+}
+
+/* ---------- Regras ---------- */
+.accordion-button {
+  font-family: var(--fonte-titulo);
+  font-weight: 600;
+}
+
+.accordion-button:not(.collapsed) {
+  color: var(--roxo);
+  background-color: #ece3f5;
+}
+
+.tabela-tributos {
+  max-width: 28rem;
+}
+
+.tabela-tributos caption {
+  caption-side: top;
+  color: #5a4d66;
+}
+
+/* ---------- Decks ---------- */
+.nav-pills .nav-link {
+  font-family: var(--fonte-titulo);
+  color: var(--roxo);
+}
+
+.nav-pills .nav-link.active {
+  background-color: var(--tinta);
+}
+
+.resumo-deck {
+  font-weight: 600;
+}
+
+/* Mesa do deck: pilhas de mini cartas */
+.mesa-deck {
+  margin: 0 0 1rem;
+  padding: 1.25rem 1.25rem 1.5rem;
+  background:
+    radial-gradient(circle at 50% 0%, rgba(201, 162, 39, .18), transparent 60%),
+    linear-gradient(160deg, var(--roxo), var(--roxo-escuro));
+  border-radius: .75rem;
+  box-shadow: inset 0 0 30px rgba(0, 0, 0, .35);
+}
+
+/* O Bootstrap só oferece row-cols até 6; em telas grandes a mesa mostra 8 cartas por linha. */
+@media (min-width: 1200px) {
+  .mesa-deck > * {
+    flex: 0 0 auto;
+    width: 12.5%;
+  }
+}
+
+.mini-carta {
+  --moldura: var(--moldura-normal);
+  position: relative;
+  display: block;
+  width: 100%;
+  padding: .25rem;
+  color: #1d1428;
+  text-align: left;
+  background: var(--moldura);
+  border: 1px solid rgba(0, 0, 0, .55);
+  border-radius: .35rem;
+  transition: transform .2s ease;
+}
+
+.mini-carta[data-moldura="efeito"] { --moldura: var(--moldura-efeito); }
+.mini-carta[data-moldura="magia"] { --moldura: var(--moldura-magia); }
+.mini-carta[data-moldura="armadilha"] { --moldura: var(--moldura-armadilha); }
+
+/* Uma "camada" de carta atrás da outra para cada cópia extra */
+.mini-carta[data-copias="2"] {
+  box-shadow: 4px 4px 0 -1px var(--moldura), 4px 4px 0 0 rgba(0, 0, 0, .55);
+}
+
+.mini-carta[data-copias="3"] {
+  box-shadow:
+    4px 4px 0 -1px var(--moldura), 4px 4px 0 0 rgba(0, 0, 0, .55),
+    8px 8px 0 -1px var(--moldura), 8px 8px 0 0 rgba(0, 0, 0, .55);
+}
+
+.mini-carta::after {
+  content: '';
+  display: block;
+  height: .8rem;
+  margin-top: .2rem;
+  background: #f8f1dc;
+  border-radius: .15rem;
+}
+
+.mini-carta:hover,
+.mini-carta:focus-visible {
+  transform: translateY(-4px);
+}
+
+.mini-carta:focus-visible {
+  outline: 3px solid var(--dourado);
+  outline-offset: 2px;
+}
+
+.mini-carta__nome {
+  display: block;
+  margin-bottom: .2rem;
+  padding: .1rem .25rem;
+  overflow: hidden;
+  font-family: var(--fonte-titulo);
+  font-size: .75rem;
+  font-weight: 700;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  background: rgba(255, 255, 255, .65);
+  border-radius: .2rem;
+}
+
+.mini-carta__arte {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border: 2px solid rgba(0, 0, 0, .4);
+}
+
+.mini-carta__copias {
+  position: absolute;
+  top: -.55rem;
+  right: -.55rem;
+  color: var(--roxo-escuro);
+  background-color: var(--dourado);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, .5);
+}
+
+/* ---------- Sobre o projeto (faixa escura junto ao rodapé) ---------- */
+.secao-sobre {
+  color: #e9e1f3;
+  background: linear-gradient(180deg, var(--roxo), var(--roxo-escuro));
+}
+
+.secao-sobre .titulo-secao {
+  color: #fff;
+}
+
+.secao-sobre h3 {
+  color: var(--dourado);
+}
+
+.secao-sobre p,
+.secao-sobre li {
+  font-size: 1.05rem;
+}
+
+.secao-sobre code {
+  color: #f3c6e0;
+}
+
+/* ---------- Rodapé ---------- */
+.rodape {
+  padding: 1.5rem 0;
+  color: #e9e1f3;
+  background-color: var(--roxo-escuro);
+  border-top: 1px solid rgba(255, 255, 255, .1);
+  font-size: 1rem;
+}
+
+.rodape a {
+  color: var(--dourado);
+}
+
+/* ---------- Microinterações ---------- */
+
+/* Links do menu: sublinhado que cresce a partir do centro */
+.navbar-desvario .nav-link {
+  position: relative;
+}
+
+.navbar-desvario .nav-link::after {
+  content: '';
+  position: absolute;
+  right: var(--bs-navbar-nav-link-padding-x, .5rem);
+  bottom: .3rem;
+  left: var(--bs-navbar-nav-link-padding-x, .5rem);
+  height: 2px;
+  background: var(--dourado);
+  transform: scaleX(0);
+  transition: transform .25s ease;
+}
+
+.navbar-desvario .nav-link:hover::after,
+.navbar-desvario .nav-link:focus-visible::after {
+  transform: scaleX(1);
+}
+
+/* Botões principais: sobem um pouco ao passar o mouse */
+.btn-desvario,
+.btn-outline-light {
+  transition: color .15s ease, background-color .15s ease, border-color .15s ease, box-shadow .15s ease, transform .2s ease;
+}
+
+.btn-desvario:hover,
+.btn-outline-light:hover {
+  transform: translateY(-2px);
+}
+
+/* Foco sempre visível para quem navega pelo teclado */
+:focus-visible {
+  outline: 3px solid var(--dourado);
+  outline-offset: 2px;
+}
+
+/* ---------- SVG inline ---------- */
+
+/* Ícones dos botões do topo: giram de leve no hover */
+.botao-com-icone {
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+}
+
+.icone-botao {
+  flex-shrink: 0;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  transition: transform .25s ease;
+}
+
+.botao-com-icone:hover .icone-botao,
+.botao-com-icone:focus-visible .icone-botao {
+  transform: rotate(-10deg) scale(1.12);
+}
+
+/* Xícara do rodapé: o vapor muda de cor e sobe, e a xícara inclina no hover */
+.xicara-svg {
+  flex-shrink: 0;
+  overflow: visible;
+}
+
+.xicara-svg__fundo {
+  fill: var(--roxo);
+  stroke: var(--dourado);
+  stroke-width: 2;
+}
+
+.xicara-svg__vapor path {
+  fill: none;
+  stroke: #cdb6ea;
+  stroke-width: 2.5;
+  stroke-linecap: round;
+  transition: stroke .3s ease;
+}
+
+.xicara-svg__xicara {
+  transform-origin: 32px 50px;
+  transition: transform .3s ease;
+}
+
+.xicara-svg__corpo {
+  fill: var(--pergaminho);
+}
+
+.xicara-svg__alca {
+  fill: none;
+  stroke: var(--pergaminho);
+  stroke-width: 3;
+  stroke-linecap: round;
+}
+
+.xicara-svg__pires {
+  fill: var(--dourado);
+}
+
+.xicara-svg:hover .xicara-svg__vapor path {
+  stroke: var(--dourado);
+  animation: vapor-subindo 1.2s ease-in-out infinite;
+}
+
+.xicara-svg:hover .xicara-svg__xicara {
+  transform: rotate(-8deg);
+}
+
+@keyframes vapor-subindo {
+  0%, 100% { transform: translateY(0); opacity: 1; }
+  50% { transform: translateY(-3px); opacity: .6; }
+}
+
+/* Seta do "Voltar ao topo": sobe no hover */
+.icone-topo {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  vertical-align: -1px;
+  transition: transform .2s ease;
+}
+
+.link-topo:hover .icone-topo,
+.link-topo:focus-visible .icone-topo {
+  transform: translateY(-3px);
+}
+
+/* ---------- Acessibilidade: menos movimento ---------- */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+  }
+
+  #lista-cartas .carta:hover,
+  #lista-cartas .carta:focus-within,
+  .mini-carta:hover,
+  .mini-carta:focus-visible,
+  .carta-regiao:hover,
+  .carta-regiao:focus-visible,
+  .seletor-regioes .nav-link:hover,
+  .seletor-regioes .nav-link:focus-visible,
+  .btn-desvario:hover,
+  .btn-outline-light:hover {
+    transform: none;
+  }
+}

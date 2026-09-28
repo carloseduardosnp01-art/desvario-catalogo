@@ -1,0 +1,12 @@
+{
+  "id": 10,
+  "codigo": "DSV-010",
+  "tipoMonstro": "Brinquedo",
+  "atk": 2000,
+  "def": 2200,
+  "efeito": "Você pode Invocar esta carta por Invocação-Normal sem Tributo. Se fizer isso, o ATK original dela se torna 1000.",
+  "historia": "Nunca anda em linha reta, o que deixa as outras peças do tabuleiro furiosas.",
+  "regiao": "Jardim de Xadrez Vivo",
+  "descricaoArte": "Torre de xadrez gigante de pedra coberta de hera e flores, andando com pernas de raízes por um jardim quadriculado. Peões-cogumelo fogem do caminho.",
+  "creditoArte": "Ilustração gerada por IA."
+}

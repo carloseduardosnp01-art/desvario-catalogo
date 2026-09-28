@@ -1,0 +1,12 @@
+{
+  "id": 33,
+  "codigo": "DSV-033",
+  "tipoMonstro": null,
+  "atk": null,
+  "def": null,
+  "efeito": "Quando o oponente Invocar por Invocação-Normal um monstro com 1500 ou mais de ATK: destrua esse monstro.",
+  "historia": null,
+  "regiao": "Cidadela Cinzenta",
+  "descricaoArte": "Alçapão se abrindo no chão sob um monstro colorido, com três auditores cinzentos de prancheta surgindo de baixo, anotando tudo.",
+  "creditoArte": "Ilustração gerada por IA."
+}

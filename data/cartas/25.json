@@ -1,0 +1,12 @@
+{
+  "id": 25,
+  "codigo": "DSV-025",
+  "tipoMonstro": "Burocrata",
+  "atk": 1600,
+  "def": 1200,
+  "efeito": "Se esta carta atacar um monstro em Posição de Defesa cuja DEF seja menor que o ATK desta carta: cause ao oponente dano igual à diferença.",
+  "historia": "Desenha círculos perfeitos. Principalmente em volta dos alvos.",
+  "regiao": "Cidadela Cinzenta",
+  "descricaoArte": "Guerreiro esguio em forma de compasso: uma perna em ponta afiada cravada no chão, a outra traçando um círculo perfeito em volta de uma flor colorida assustada.",
+  "creditoArte": "Ilustração gerada por IA."
+}
